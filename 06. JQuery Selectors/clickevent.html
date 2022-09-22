@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#bt1").click(function(){
+                    $("p").hide();
+                });
+
+                $("#bt2").click(function(){
+                    $("p").show();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h2> demonstration of AJAX click event </h2>
+        <p> first paragraph </p>
+        <p> second paragraph </p>
+        <button id="bt1"> Click me to hide para</button>
+        <button id="bt2"> Click me to show para</button>
+    </body>
+</html>
