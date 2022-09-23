@@ -1,0 +1,71 @@
+<html>
+<head><title>Form validation</title>
+<script language="javascript">
+var s1,s2,s3, i;
+function fun1()
+{
+if(form1.name.value=="")
+{
+alert("Enter the name");
+form1.name.focus();
+}
+else
+{
+var l=form1.name.value.length;
+s1=new String(form1.name.value);
+for(i=0;i<l;i++) 
+{
+if(!((s1.charAt(i)>='a'||s1.charAt(i)>='A') && (s1.charAt(i)<='z'||s1.charAt(i)<='Z')))
+{
+alert("Please enter the correct name");
+form1.name.focus();
+break;
+}}}
+}
+
+
+function fun2()
+{
+s2=form1.phno.value;
+l=form1.phno.value.length;
+if((s2=="") || isNaN(s2)|| l!=10)
+{
+alert("Invalid phone number");
+form1.phno.focus();
+}
+}
+function fun3()
+{
+s3=form1.pswd.value;
+var l=form1.pswd.value.length;
+if(s3=="")
+{
+alert("Invalid password");
+form1.pswd.focus();
+}
+}
+function fun4(){
+w1=window.open('Form validation.html');
+w1.document.writeln("<h1><center>");
+w1.document.writeln("Validated form Details");
+w1.document.writeln("</h1></center>"); 
+w1.document.writeln("<br>");
+w1.document.writeln("Name:",s1);
+w1.document.writeln("<br>");
+w1.document.writeln("Phone:",s2);
+w1.document.writeln("<br>")
+w1.document.writeln("Password will not be shown");
+w1.document.writeln("<br>");} </script></head>
+
+<body bgcolor="pink" >
+<h1><b><u> User profile </u></b></h1>
+<form name="form1" method="get">
+<b>
+Name:<input type="text" name="name" maxlen="15"><br>
+Phoneno:<input type="text" name="phno" onfocus="fun1() "><br>
+Password:<input type="password" name="pswd" onfocus="fun2()"><br><br><br><br>
+<input type="button" value="submit" onfocus="fun3()" onclick="fun4()">
+</b> 
+</form>
+</body>
+</html>
